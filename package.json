@@ -4,7 +4,7 @@
   "description": "Simple system monitor",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -12,4 +12,11 @@
   },
   "author": "Svihran Kristijan",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiks2401/sysinfoApp/issues"
+  },
+  "homepage": "https://github.com/kiks2401/sysinfoApp#readme",
+  "dependencies": {
+    "electron": "^4.0.1"
+  }
 }
