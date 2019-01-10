@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>SysInfoApp</title>
-  <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>SysInfoApp</h1>
+  <div class="container center">
+    <h1 class="display-1 text-success">SysInfoApp</h1>
     <div id='output'></div>
+
+
   </div>
 
 </body>
@@ -17,19 +20,84 @@
 <script>
   console.log(process);
   let output = `
-    <h2 class="page-header">App Version Data</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Node: ${process.versions.node}</li>
-      <li class="list-group-item">Chrome: ${process.versions.chrome}</li>
-      <li class="list-group-item">Electron: ${process.versions.electron}</li>
-    </ul>
+  <table class="table table-light big text-info">
 
-  <h2 class="page-header">System Specs</h2>
-    <ul class="list-group">
-      <li class="list-group-item">System Architecture: ${process.arch}</li>
-      <li class="list-group-item">Processor Identifier: ${process.env.PROCESSOR_IDENTIFIER}</li>
-      <li class="list-group-item">Number Of Processors: ${process.env.NUMBER_OF_PROCESSORS}</li>
-    </ul>
+
+    <h2 class="text-warning">App Version Data</h2>
+
+  <tbody>
+    <tr>
+      <th scope="row">Node:</th>
+      <td>${process.versions.node}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Electron:</th>
+      <td>${process.versions.electron}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Chrome:</th>
+      <td>${process.versions.chrome}</td>
+    </tr>
+
+  </tbody>
+  </table>
+
+
+  <table class="table table-light big text-info">
+
+
+    <h2 class="text-warning">System Specs</h2>
+
+  <tbody>
+    <tr>
+      <th scope="row">Computer Name:</th>
+      <td>${process.env.COMPUTERNAME}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Username:</th>
+      <td>${process.env.USERNAME}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">OS:</th>
+      <td>${process.env.OS}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">System Architecture:</th>
+      <td>${process.arch}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Processor Architecture:</th>
+      <td>${process.env.PROCESSOR_ARCHITECTURE}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Processor Identifier:</th>
+      <td>${process.env.PROCESSOR_IDENTIFIER}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Precesor Level:</th>
+      <td>${process.env.PROCESSOR_LEVEL}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Precesor Revision:</th>
+      <td>${process.env.PROCESSOR_REVISION}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Number Of Processors:</th>
+      <td>${process.env.NUMBER_OF_PROCESSORS}</td>
+    </tr>
+
+  </tbody>
+  </table>
    `;
 
   document.getElementById('output').innerHTML = output;
@@ -38,6 +106,16 @@
 
 <script>
   require('./renderer.js');
+
+
 </script>
 
+<!-- <h2 class="page-header">App Version Data</h2>
+
+<h2 class="page-header">System Specs</h2>
+<ul class="list-group">
+  <li class="list-group-item">System Architecture: ${process.arch}</li>
+  <li class="list-group-item">Processor Identifier: ${process.env.PROCESSOR_IDENTIFIER}</li>
+  <li class="list-group-item">Number Of Processors: ${process.env.NUMBER_OF_PROCESSORS}</li>
+</ul> -->
 </html>
